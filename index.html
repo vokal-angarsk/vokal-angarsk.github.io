@@ -55,8 +55,12 @@
            gap: 12px;
        }
        /* Логотип-картинка скрыт, используем только текст */
-       .logo-img {
-           display: none;
+       ..logo-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin-right: 8px;
+    display: block;
        }
        .logo-text h1 {
            font-family: 'SSF Breakthrough', Impact, 'Arial Black', sans-serif;
