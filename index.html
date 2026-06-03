@@ -4,49 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Обучение вокалу в Ангарске | Моя школа</title>
-<style>
-   /* CSS без изменений (полный CSS из вашего последнего сообщения) */
-   /* ... (здесь весь ваш CSS, который я не меняю) ... */
-</style>
-</head>
-<body>
- 
-<header>
-<div class="container header-inner">
-   <div class="logo-area">
-       <a href="/">
-           <img src="logo.png" alt="Логотип Моя школа" class="logo-img" onerror="this.style.display='none'">
-       </a>
-   </div>
-   <div class="nav-links">
-       <a href="#about">О нас</a>
-       <a href="#how">Как учим</a>
-       <a href="#atmos">Атмосфера</a>
-       <a href="#reviews">Отзывы</a>      <!-- добавили -->
-       <a href="#form">Контакты</a>       <!-- добавили -->
-       <a href="#form" class="btn-header">Записаться</a>
-   </div>
-</div>
-</header>
- 
-<main>
-   <!-- все секции без изменений, они уже имеют якоря: about, how, atmos, reviews, form -->
-   ...
-</main>
- 
-</body>
-</html>
-```
-
-Чтобы код был полностью рабочим, я предоставлю полный файл index.html с внесёнными изменениями (на основе вашего последнего кода, где текст шагов был немного изменён). Скопируйте его и замените существующий файл.
-
-```html
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Обучение вокалу в Ангарске | Моя школа</title>
+<!-- Подключаем Swiper -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <style>
    /* Подключаем нестандартный шрифт SSF Breakthrough */
    @font-face {
@@ -334,22 +293,53 @@
        font-size: 0.9rem;
    }
  
-   /* Атмосфера */
-   .atmos-grid {
-       display: grid;
-       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-       gap: 20px;
-       margin-bottom: 30px;
-   }
-   .atmos-item {
-       border-radius: 20px;
-       overflow: hidden;
-       box-shadow: 0 5px 10px rgba(0,0,0,0.3);
-   }
-   .atmos-item img {
+   /* Атмосфера (карусель) */
+   .swiper {
        width: 100%;
        height: auto;
+       border-radius: 24px;
+       overflow: hidden;
+       margin-bottom: 30px;
+   }
+   .swiper-slide img {
+       width: 100%;
+       height: 400px;
+       object-fit: cover;
        display: block;
+   }
+   .swiper-pagination-bullet {
+       background: #FFD700;
+       opacity: 0.6;
+   }
+   .swiper-pagination-bullet-active {
+       background: #FFD700;
+       opacity: 1;
+   }
+   .swiper-button-prev,
+   .swiper-button-next {
+       color: #FFD700;
+       background: rgba(0,0,0,0.5);
+       width: 40px;
+       height: 40px;
+       border-radius: 50%;
+   }
+   .swiper-button-prev:after,
+   .swiper-button-next:after {
+       font-size: 20px;
+   }
+   @media (max-width: 768px) {
+       .swiper-slide img {
+           height: 250px;
+       }
+       .swiper-button-prev,
+       .swiper-button-next {
+           width: 30px;
+           height: 30px;
+       }
+       .swiper-button-prev:after,
+       .swiper-button-next:after {
+           font-size: 14px;
+       }
    }
  
    /* Блок с фото учеников */
@@ -488,10 +478,6 @@
        }
        .logo-img {
            height: 70px;
-       }
-       .atmos-grid {
-           grid-template-columns: 1fr;
-           gap: 16px;
        }
        .map p {
            margin-bottom: 25px;
@@ -650,34 +636,39 @@
    </div>
 </section>
  
-<!-- Атмосфера и тусовки -->
+<!-- Атмосфера и тусовки (карусель) -->
 <section id="atmos" style="background-color: #0F0F0F;">
-   <div class="container">
-       <h2 class="section-title">Не просто уроки — семья</h2>
-       <div class="atmos-grid">
-           <div class="atmos-item">
-               <img src="atmos1.jpg" alt="Вечеринка" onerror="this.src='https://placehold.co/400x250/1A1A1A/FFD700?text=Вечеринка'">
-           </div>
-           <div class="atmos-item">
-               <img src="atmos2.jpg" alt="Концерт" onerror="this.src='https://placehold.co/400x250/1A1A1A/FFD700?text=Концерт'">
-           </div>
-           <div class="atmos-item">
-               <img src="atmos3.jpg" alt="Знакомства" onerror="this.src='https://placehold.co/400x250/1A1A1A/FFD700?text=Дружба'">
-           </div>
-       </div>
-       <p style="text-align: center; max-width: 700px; margin: 0 auto 20px auto; font-size: 1.1rem; color: #E0E0E0;">
-           Мы — не просто школа вокала, а клуб по интересам,<br> где каждый чувствует себя как дома. Здесь вы не просто научитесь петь — вы обретёте круг единомышленников,<br> где можно быть собой. Кто знает, может, именно здесь вы найдёте не только голос, но и верных друзей… или что‑то ещё? 😉
-       </p>
+    <div class="container">
+        <h2 class="section-title">Не просто уроки — семья</h2>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="atmos1.jpg" alt="Вечеринка" onerror="this.src='https://placehold.co/400x250/1A1A1A/FFD700?text=Вечеринка'">
+                </div>
+                <div class="swiper-slide">
+                    <img src="atmos2.jpg" alt="Концерт" onerror="this.src='https://placehold.co/400x250/1A1A1A/FFD700?text=Концерт'">
+                </div>
+                <div class="swiper-slide">
+                    <img src="atmos3.jpg" alt="Знакомства" onerror="this.src='https://placehold.co/400x250/1A1A1A/FFD700?text=Дружба'">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+        <p style="text-align: center; max-width: 700px; margin: 0 auto 20px auto; font-size: 1.1rem; color: #E0E0E0;">
+            Мы — не просто школа вокала, а клуб по интересам,<br> где каждый чувствует себя как дома. Здесь вы не просто научитесь петь — вы обретёте круг единомышленников,<br> где можно быть собой. Кто знает, может, именно здесь вы найдёте не только голос, но и верных друзей… или что‑то ещё? 😉
+        </p>
  
-       <!-- Фото учеников -->
-       <div class="students-photo">
-           <img src="students.jpg" alt="Наши ученики" onerror="this.src='https://placehold.co/800x400/1A1A1A/FFD700?text=Загрузите+фото+учеников'">
-       </div>
+        <!-- Фото учеников -->
+        <div class="students-photo">
+            <img src="students.jpg" alt="Наши ученики" onerror="this.src='https://placehold.co/800x400/1A1A1A/FFD700?text=Загрузите+фото+учеников'">
+        </div>
  
-       <p style="text-align: center; max-width: 700px; margin: 20px auto 0; font-size: 1.1rem; color: #FFD700; font-weight: bold;">
-           200+ учеников уже прошли наш путь — теперь ваша очередь!
-       </p>
-   </div>
+        <p style="text-align: center; max-width: 700px; margin: 20px auto 0; font-size: 1.1rem; color: #FFD700; font-weight: bold;">
+            200+ учеников уже прошли наш путь — теперь ваша очередь!
+        </p>
+    </div>
 </section>
  
 <!-- ВИДЖЕТ ОТЗЫВОВ -->
@@ -716,7 +707,7 @@
    </div>
 </section>
  
-<!-- Карта и форма (контакты) -->
+<!-- Карта и форма -->
 <section id="form">
    <div class="container map-form-grid">
        <div class="map">
@@ -764,7 +755,25 @@
  <button onclick="document.getElementById('cookie-banner').style.display='none'" style="background: #FFD700; color: #0A0A0A; border: none; padding: 6px 18px; border-radius: 40px; cursor: pointer;">Понятно</button>
 </div>
  
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        effect: "slide",
+        speed: 600,
+    });
+</script>
 </body>
 </html>
-```
-
