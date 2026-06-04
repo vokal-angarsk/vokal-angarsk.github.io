@@ -427,9 +427,88 @@
    }
  
    /* ===== АДАПТАЦИЯ ПОД ТЕЛЕФОН ===== */
-   
-       }
-   }
+@media (max-width: 768px) {
+    .container {
+        padding: 0 16px;
+    }
+    section {
+        padding: 40px 0;
+    }
+    .section-title {
+        font-size: 1.6rem;
+        margin-bottom: 30px;
+    }
+    .hero-text {
+        text-align: center;
+    }
+    .hero-text h2 {
+        font-size: 1.8rem;
+    }
+    .hero-text p {
+        font-size: 1rem;
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 90%;
+    }
+    .hero-grid {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-image {
+        margin-top: 20px;
+    }
+    .btn-primary {
+        padding: 10px 24px;
+        font-size: 0.9rem;
+    }
+    .features-grid, .steps {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .step, .feature-card {
+        padding: 20px;
+    }
+    .map-form-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .map iframe {
+        height: 300px;
+    }
+    .form-wrapper iframe {
+        height: 500px;
+    }
+    .header-inner {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+    .nav-links {
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+    .btn-header {
+        padding: 5px 12px;
+        font-size: 0.85rem;
+    }
+    .atmos-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .map p {
+        margin-bottom: 25px;
+    }
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+    .lesson-steps {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
 </style>
 </head>
 <body>
