@@ -15,10 +15,10 @@
       font-display: swap;
   }
 
-  /* ===== ЗАЩИТА ОТ ВЫХОДА ЗА ЭКРАН (clip — не ломает sticky) ===== */
   html, body {
       overflow-x: clip;
       max-width: 100%;
+      scroll-behavior: smooth;
   }
   img, iframe {
       max-width: 100%;
@@ -167,11 +167,10 @@
   }
   .hero-image {
       flex: 1;
-      text-align:;
- center;
+      text-align: center;
       min-width: 0;
   }
-       .hero-image img {
+  .hero-image img {
       max-width: 100%;
       border-radius: 24px;
       box-shadow: 0 20px 30px -10px rgba(0,0,0,0.5);
@@ -253,7 +252,8 @@
   }
   .faq-item {
       background: #1F1F1F;
-      border-radius: 20px padding: 20px;
+      border-radius: 20px;
+      padding: 20px;
       margin-bottom: 16px;
       border: 1px solid #333;
   }
@@ -439,7 +439,6 @@
           margin-bottom: 24px;
       }
 
-      /* Первый экран */
       .hero {
           padding: 30px 0;
       }
@@ -466,7 +465,6 @@
           max-width: 320px;
       }
 
-      /* Сетки в один столбец */
       .features-grid,
       .steps,
       .lesson-steps {
@@ -480,7 +478,6 @@
           width: 100%;
       }
 
-      /* Карусель */
       .swiper.mySwiperAtmos {
           width: 100%;
           overflow: hidden;
@@ -504,12 +501,10 @@
           font-size: 12px;
       }
 
-      /* Фото учеников */
       .students-photo img {
           border-radius: 16px;
       }
 
-      /* Карта и форма */
       .map-form-grid {
           grid-template-columns: 1fr;
           gap: 24px;
@@ -524,7 +519,6 @@
           height: 520px;
       }
 
-      /* Шапка */
       .header-inner {
           flex-direction: column;
           gap: 10px;
@@ -547,14 +541,12 @@
           font-size: 0.8rem;
       }
 
-      /* Подвал */
       .footer-inner {
           flex-direction: column;
           text-align: center;
           gap: 20px;
       }
 
-      /* Текст под каруселью */
       #atmos p {
           font-size: 0.95rem !important;
           padding: 0 6px;
@@ -576,7 +568,7 @@
       <a href="#how">Как учим</a>
       <a href="#atmos">Атмосфера</a>
       <a href="#reviews">Отзывы</a>
-      <a href="#form">Контакты</a>
+      <a href="#contacts">Контакты</a>
       <a href="#form" class="btn-header">Записаться</a>
   </div>
 </div>
@@ -606,10 +598,10 @@
            <div class="feature-card">
                <div class="feature-icon">🎤</div>
                <h3>Без скуки</h3>
-               <p>Каждое занятие — как мини-шоу: шутки, драйв, поддержка. Здесь можно посмеяться над своей фальшивой нотой - мы только "за".</p>
-           </div>
-           <div class="feature-card">
-               <div class="feature-icon">⚡</div>
+               <p>Каждое занятие — как мини-шоу: шутки, драйв, поддержка. Здесь можно посмеяться над своей фальшивой нотой - мыp только "за>".</p>
+          И </div>
+           <divсс class="feature-card">
+               <леdiv class="feature-icon">⚡ду</div>
                <h3>Быстрый результат</h3>
                <p>Через пол года вы выходите на большую сцену и исполняете свою песню. Звучите как звезда, даже если начинали с нуля.</p>
            </div>
@@ -659,7 +651,7 @@
           </div>
           <div class="step-item">
               <div class="step-number">3</div>
-              <p>Исследуете свой голос → найдём ваши фишки</p>
+              <ете свой голос → найдём ваши фишки</p>
           </div>
           <div class="step-item">
               <div class="step-number">4</div>
@@ -783,7 +775,7 @@
 </section>
 </main>
  
-<footer>
+<footer id="contacts">
 <div class="container footer-inner">
   <div class="footer-col">
       <h4>Моя школа</h4>
