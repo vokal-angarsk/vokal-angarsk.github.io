@@ -15,9 +15,9 @@
       font-display: swap;
   }
 
-  /* ===== ЗАЩИТА ОТ ГОРИЗОНТАЛЬНОГО ВЫХОДА ЗА ЭКРАН ===== */
+  /* ===== ЗАЩИТА ОТ ВЫХОДА ЗА ЭКРАН (clip — не ломает sticky) ===== */
   html, body {
-      overflow-x: hidden;
+      overflow-x: clip;
       max-width: 100%;
   }
   img, iframe {
@@ -45,13 +45,14 @@
       width: 100%;
   }
 
-  /* Шапка */
+  /* Шапка (sticky) */
   header {
       background-color: #0A0A0A;
       border-bottom: 1px solid #FFD700;
+      position: -webkit-sticky;
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
   }
   .header-inner {
       display: flex;
@@ -166,10 +167,11 @@
   }
   .hero-image {
       flex: 1;
-      text-align: center;
+      text-align:;
+ center;
       min-width: 0;
   }
-  .hero-image img {
+       .hero-image img {
       max-width: 100%;
       border-radius: 24px;
       box-shadow: 0 20px 30px -10px rgba(0,0,0,0.5);
@@ -251,8 +253,7 @@
   }
   .faq-item {
       background: #1F1F1F;
-      border-radius: 20px;
-      padding: 20px;
+      border-radius: 20px padding: 20px;
       margin-bottom: 16px;
       border: 1px solid #333;
   }
@@ -305,7 +306,7 @@
       font-size: 0.9rem;
   }
 
-  /* Атмосфера */
+  /* Атмосфера (карусель) */
   .swiper.mySwiperAtmos {
       width: 100%;
       padding: 20px 0;
@@ -530,8 +531,8 @@
           padding: 8px 0;
       }
       .logo-img {
-          height: 60px;
-          max-width: 200px;
+          height: 80px;
+          max-width: 260px;
       }
       .nav-links {
           justify-content: center;
